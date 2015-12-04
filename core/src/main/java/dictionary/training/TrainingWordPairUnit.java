@@ -7,6 +7,7 @@ import dictionary.word.WordPair;
  * with current learning status
  */
 public class TrainingWordPairUnit {
+    private long id;
     private WordPair wordPair;
     private boolean isLearned;
 
@@ -29,5 +30,13 @@ public class TrainingWordPairUnit {
 
     public void setWordPair( WordPair wordPair ) {
         this.wordPair = wordPair;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId( long id ) {
+        this.id = id;
     }
 }
