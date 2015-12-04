@@ -1,0 +1,66 @@
+package user;
+
+import dictionary.training.TrainingWordPairUnit;
+import role.Role;
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+    private long id;
+    private String username;
+    private String password;
+    private Role role;
+    List< TrainingWordPairUnit > dictionary;
+
+    public User( long id, String username, String password ) {
+        this( id, username, password, null );
+    }
+
+    public User( long id, String username, String password, Role role ) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.dictionary = new ArrayList< TrainingWordPairUnit >(  );
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole( Role role ) {
+        this.role = role;
+    }
+
+    public List< TrainingWordPairUnit > getDictionary() {
+        return dictionary;
+    }
+
+    public void setDictionary( List< TrainingWordPairUnit > dictionary ) {
+        this.dictionary = dictionary;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId( long id ) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername( String username ) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword( String password ) {
+        this.password = password;
+    }
+}
