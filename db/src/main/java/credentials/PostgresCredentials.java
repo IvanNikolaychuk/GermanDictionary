@@ -22,7 +22,8 @@ public class PostgresCredentials extends DbCredentials {
         return instance;
     }
 
-    private void init() throws IOException {
+    // todo : rewrite exception and way to get credentials
+    public void init() throws IOException {
         Properties prop = new Properties();
         prop.load( new FileInputStream( Properties.class.getResource( "/" ).getPath() + "db-config.properties" ) );
         String host = prop.getProperty( "host" );
