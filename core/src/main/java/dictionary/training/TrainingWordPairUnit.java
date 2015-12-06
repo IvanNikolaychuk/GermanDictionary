@@ -7,7 +7,7 @@ import dictionary.word.WordPair;
  * with current learning status
  */
 public class TrainingWordPairUnit {
-    private long id;
+    private int id;
     private WordPair wordPair;
     private boolean isLearned;
 
@@ -36,7 +36,7 @@ public class TrainingWordPairUnit {
         return id;
     }
 
-    public void setId( long id ) {
+    public void setId( int id ) {
         this.id = id;
     }
 }

@@ -1,27 +1,30 @@
 package dictionary.word;
 
 public class WordPair {
-    private GermanWord germanWord;
-    private RussianWord russianWord;
+    private Word germanWord;
+    private Word russianWord;
 
-    public WordPair( RussianWord russianWord, GermanWord germanWord ) {
+    public WordPair( Word russianWord, Word germanWord ) {
         this.russianWord = russianWord;
         this.germanWord = germanWord;
     }
 
-    public GermanWord getGermanWord() {
+    public WordPair() {
+    }
+
+    public Word getGermanWord() {
         return germanWord;
     }
 
-    public void setGermanWord( GermanWord germanWord ) {
+    public void setGermanWord( Word germanWord ) {
         this.germanWord = germanWord;
     }
 
-    public RussianWord getRussianWord() {
+    public Word getRussianWord() {
         return russianWord;
     }
 
-    public void setRussianWord( RussianWord russianWord ) {
+    public void setRussianWord( Word russianWord ) {
         this.russianWord = russianWord;
     }
 }
