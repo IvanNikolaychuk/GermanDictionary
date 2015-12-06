@@ -6,17 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private long id;
+    private int id;
     private String username;
     private String password;
     private Role role;
     List< TrainingWordPairUnit > dictionary;
 
-    public User( long id, String username, String password ) {
+    public User( int id, String username, String password ) {
         this( id, username, password, null );
     }
 
-    public User( long id, String username, String password, Role role ) {
+    public User( int id, String username, String password, Role role ) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -44,7 +44,7 @@ public class User {
         return id;
     }
 
-    public void setId( long id ) {
+    public void setId( int id ) {
         this.id = id;
     }
 
