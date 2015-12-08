@@ -7,7 +7,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-        <bean id="dbCredentials" class="credentials.PostgresCredentials" init-method="init"/>
+        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+                <property name="locations" value="db-config.properties"/>
+        </bean>
+
+        <bean id="dbCredentials" class="credentials.PostgresCredentials">
+                <property name="user" value="${user}"/>
+                <property name="password" value="${password}"/>
+                <property name="connectString" value="${connection}"/>
+        </bean>
 
         <bean id="dbConnProvider" class="provider.DbConnectionProvider">
                 <constructor-arg type="credentials.DbCredentials" ref="dbCredentials"/>

@@ -13,6 +13,10 @@ public class DbConnectionProvider {
         this.dbCredentials = dbCredentials;
     }
 
+    public DbCredentials getDbCredentials() {
+        return dbCredentials;
+    }
+
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection( dbCredentials.getConnectString(),
                 dbCredentials.getUser(), dbCredentials.getPassword() );
