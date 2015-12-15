@@ -18,4 +18,8 @@
                 <constructor-arg type="credentials.DbCredentials" ref="dbCredentials"/>
         </bean>
 
+        <bean id="trainingDao" class="dao.training.TrainingDaoImpl">
+                <constructor-arg ref="dbConnProvider"/>
+        </bean>
+
 </beans>

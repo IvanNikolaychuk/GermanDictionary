@@ -6,7 +6,7 @@ import dictionary.word.WordPair;
 import provider.DbConnectionProvider;
 import java.sql.*;
 
-public class TrainingDaoImpl implements TrainingUnitDao {
+public class TrainingDaoImpl implements TrainingDao {
     private DbConnectionProvider connectionProvider;
 
     public TrainingDaoImpl( DbConnectionProvider connectionProvider ) {

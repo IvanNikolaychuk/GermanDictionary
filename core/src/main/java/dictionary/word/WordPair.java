@@ -24,4 +24,12 @@ public class WordPair {
     public void setRussianWord( Word russianWord ) {
         this.russianWord = russianWord;
     }
+
+    @Override
+    public String toString() {
+        return "WordPair{" +
+                "germanWord=" + germanWord +
+                ", russianWord=" + russianWord +
+                '}';
+    }
 }
