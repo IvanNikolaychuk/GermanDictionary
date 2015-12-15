@@ -1,6 +1,6 @@
 package dictionary.word;
 
-public abstract class Word {
+public class Word {
     private String value;
 
     public Word( String value ) {
