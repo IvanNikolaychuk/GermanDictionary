@@ -1,6 +1,6 @@
 package dao.training;
 
-import dictionary.training.TrainingWordPairUnit;
+import dictionary.training.TrainingUnit;
 import dictionary.word.Word;
 import dictionary.word.WordPair;
 import provider.DbConnectionProvider;
@@ -13,7 +13,7 @@ public class TrainingDaoImpl implements TrainingUnitDao {
         this.connectionProvider = connectionProvider;
     }
 
-    public TrainingWordPairUnit getUnit( int id ) throws SQLException {
+    public TrainingUnit getUnit( int id ) throws SQLException {
         Connection connection = null;
         Statement stmt = null;
 
@@ -21,7 +21,7 @@ public class TrainingDaoImpl implements TrainingUnitDao {
         String selectSQL = "SELECT ger_word, rus_word, learned" +
                 " FROM dictionary " +
                 "WHERE id = " + id;
-        TrainingWordPairUnit unit = null;
+        TrainingUnit unit = null;
         try {
             connection = connectionProvider.getConnection();
             stmt = connection.createStatement();
@@ -34,7 +34,7 @@ public class TrainingDaoImpl implements TrainingUnitDao {
                 boolean isLearned = rs.getBoolean( "learned" );
 
                 WordPair wordPair = new WordPair( new Word( gerWord ), new Word( rusWord ) );
-                unit = new TrainingWordPairUnit( wordPair );
+                unit = new TrainingUnit( wordPair );
                 unit.setId( id );
                 unit.setLearned( isLearned );
             }
@@ -55,7 +55,7 @@ public class TrainingDaoImpl implements TrainingUnitDao {
         }
     }
 
-    public void insertUnit( TrainingWordPairUnit unit ) throws SQLException {
+    public void insertUnit( TrainingUnit unit ) throws SQLException {
         Connection connection = null;
         PreparedStatement stmt = null;
 
@@ -107,7 +107,7 @@ public class TrainingDaoImpl implements TrainingUnitDao {
         }
     }
 
-    public void updateUnit( int id, TrainingWordPairUnit unit ) throws SQLException {
+    public void updateUnit( int id, TrainingUnit unit ) throws SQLException {
         Connection connection = null;
         PreparedStatement stmt = null;
 

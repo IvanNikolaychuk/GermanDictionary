@@ -3,15 +3,15 @@ package dictionary.training;
 import dictionary.word.WordPair;
 
 /**
- * Contains word and it's translation
+ * Contains unique id, word, it's translation
  * with current learning status
  */
-public class TrainingWordPairUnit {
+public class TrainingUnit {
     private int id;
     private WordPair wordPair;
     private boolean isLearned;
 
-    public TrainingWordPairUnit( WordPair wordPair ) {
+    public TrainingUnit( WordPair wordPair ) {
         this.wordPair = wordPair;
         isLearned = false;
     }
