@@ -9,9 +9,6 @@ public class WordPair {
         this.germanWord = germanWord;
     }
 
-    public WordPair() {
-    }
-
     public Word getGermanWord() {
         return germanWord;
     }
