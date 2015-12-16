@@ -3,6 +3,7 @@ package dao.training;
 import dictionary.training.TrainingUnit;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface TrainingDao {
     TrainingUnit getUnit( int id ) throws SQLException;
@@ -12,4 +13,8 @@ public interface TrainingDao {
     void deleteUnit( int id ) throws SQLException;
 
     void updateUnit( int id, TrainingUnit unit ) throws SQLException;
+
+    List<TrainingUnit> getLastUnlearnedUnits( int maxUnits ) throws SQLException;
+
+    List<TrainingUnit> getLastUnlearnedUnits() throws SQLException;
 }
