@@ -4,22 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-                <property name="locations" value="db-config.properties"/>
-        </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="db-config.properties"/>
+    </bean>
 
-        <bean id="dbCredentials" class="credentials.PostgresCredentials">
-                <property name="user" value="${user}"/>
-                <property name="password" value="${password}"/>
-                <property name="connectString" value="${connection}"/>
-        </bean>
+    <bean id="dbCredentials" class="credentials.PostgresCredentials">
+        <property name="user" value="${user}"/>
+        <property name="password" value="${password}"/>
+        <property name="connectString" value="${connection}"/>
+    </bean>
 
-        <bean id="dbConnProvider" class="provider.DbConnectionProvider">
-                <constructor-arg type="credentials.DbCredentials" ref="dbCredentials"/>
-        </bean>
+    <bean id="dbConnProvider" class="provider.DbConnectionProvider">
+        <constructor-arg type="credentials.DbCredentials" ref="dbCredentials"/>
+    </bean>
 
-        <bean id="trainingDao" class="dao.training.TrainingDaoImpl">
-                <constructor-arg ref="dbConnProvider"/>
-        </bean>
+    <bean id="trainingDao" class="dao.training.TrainingDaoImpl">
+        <constructor-arg ref="dbConnProvider"/>
+    </bean>
 
 </beans>

@@ -4,6 +4,7 @@ import dictionary.training.TrainingUnit;
 import dictionary.word.Word;
 import dictionary.word.WordPair;
 import provider.DbConnectionProvider;
+
 import java.sql.*;
 
 public class TrainingDaoImpl implements TrainingDao {

@@ -5,8 +5,11 @@ import dictionary.training.TrainingUnit;
 import java.sql.SQLException;
 
 public interface TrainingDao {
-    TrainingUnit getUnit( int id) throws SQLException;
-    void insertUnit(TrainingUnit unit) throws SQLException;
-    void deleteUnit(int id) throws SQLException;
-    void updateUnit(int id, TrainingUnit unit) throws SQLException;
+    TrainingUnit getUnit( int id ) throws SQLException;
+
+    void insertUnit( TrainingUnit unit ) throws SQLException;
+
+    void deleteUnit( int id ) throws SQLException;
+
+    void updateUnit( int id, TrainingUnit unit ) throws SQLException;
 }
