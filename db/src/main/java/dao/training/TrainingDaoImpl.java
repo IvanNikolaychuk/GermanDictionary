@@ -15,17 +15,14 @@ public class TrainingDaoImpl implements TrainingDao {
     }
 
     public TrainingUnit getUnit( int id ) throws SQLException {
-        Connection connection = null;
-        Statement stmt = null;
 
         @SuppressWarnings( "all" )
-        String selectSQL = "SELECT ger_word, rus_word, learned" +
+        final String selectSQL = "SELECT ger_word, rus_word, learned" +
                 " FROM dictionary " +
                 "WHERE id = " + id;
         TrainingUnit unit = null;
-        try {
-            connection = connectionProvider.getConnection();
-            stmt = connection.createStatement();
+        try ( Connection connection = connectionProvider.getConnection();
+              Statement stmt = connection.createStatement() ) {
 
             ResultSet rs = stmt.executeQuery( selectSQL );
 
@@ -46,27 +43,16 @@ public class TrainingDaoImpl implements TrainingDao {
             }
 
             return unit;
-        } finally {
-            if ( connection != null ) {
-                connection.close();
-            }
-            if ( stmt != null ) {
-                connection.close();
-            }
         }
     }
 
     public void insertUnit( TrainingUnit unit ) throws SQLException {
-        Connection connection = null;
-        PreparedStatement stmt = null;
-
         @SuppressWarnings( "all" )
-        String insertSQL = "INSERT INTO" +
+        final String insertSQL = "INSERT INTO" +
                 " dictionary(ger_word, rus_word, learned) " +
                 "VALUES (?,?,?)";
-        try {
-            connection = connectionProvider.getConnection();
-            stmt = connection.prepareStatement( insertSQL );
+        try ( Connection connection = connectionProvider.getConnection();
+              PreparedStatement stmt = connection.prepareStatement( insertSQL ) ) {
 
             WordPair wordPair = unit.getWordPair();
 
@@ -75,50 +61,30 @@ public class TrainingDaoImpl implements TrainingDao {
             stmt.setBoolean( 3, unit.isLearned() );
 
             stmt.execute();
-        } finally {
-            if ( connection != null ) {
-                connection.close();
-            }
-            if ( stmt != null ) {
-                connection.close();
-            }
         }
     }
 
     public void deleteUnit( int id ) throws SQLException {
-        Connection connection = null;
-        Statement stmt = null;
 
         @SuppressWarnings( "all" )
-        String deleteSQL = "DELETE FROM" +
+        final String deleteSQL = "DELETE FROM" +
                 " dictionary " +
                 "WHERE id = " + id;
-        try {
-            connection = connectionProvider.getConnection();
-            stmt = connection.createStatement();
+        try ( Connection connection = connectionProvider.getConnection();
+              Statement stmt = connection.createStatement() ) {
 
             stmt.execute( deleteSQL );
-        } finally {
-            if ( connection != null ) {
-                connection.close();
-            }
-            if ( stmt != null ) {
-                connection.close();
-            }
         }
     }
 
     public void updateUnit( int id, TrainingUnit unit ) throws SQLException {
-        Connection connection = null;
-        PreparedStatement stmt = null;
 
         @SuppressWarnings( "all" )
-        String updateSQL = "UPDATE dictionary SET" +
+        final String updateSQL = "UPDATE dictionary SET" +
                 " ger_word = ?, rus_word = ?, learned = ? " +
                 "WHERE id = " + id;
-        try {
-            connection = connectionProvider.getConnection();
-            stmt = connection.prepareStatement( updateSQL );
+        try ( Connection connection = connectionProvider.getConnection();
+              PreparedStatement stmt = connection.prepareStatement( updateSQL ) ) {
 
             WordPair wordPair = unit.getWordPair();
 
@@ -127,13 +93,6 @@ public class TrainingDaoImpl implements TrainingDao {
             stmt.setBoolean( 3, unit.isLearned() );
 
             stmt.executeUpdate();
-        } finally {
-            if ( connection != null ) {
-                connection.close();
-            }
-            if ( stmt != null ) {
-                connection.close();
-            }
         }
     }
 }
