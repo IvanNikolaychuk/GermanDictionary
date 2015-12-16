@@ -9,6 +9,10 @@ import java.sql.SQLException;
 
 public final class TrainingDaoUtils {
 
+    /**
+     * This method doesn't close {@code rs},
+     * calling it, assume, it is closed on your side.
+     */
     public static TrainingUnit generateUnitFromResultSet( ResultSet rs ) throws SQLException {
         TrainingUnit unit;
 

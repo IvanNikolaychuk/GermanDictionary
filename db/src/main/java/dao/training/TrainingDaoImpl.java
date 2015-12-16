@@ -49,6 +49,7 @@ public class TrainingDaoImpl implements TrainingDao {
                 "INSERT INTO " +
                         "dictionary(ger_word, rus_word, learned) " +
                         "VALUES (?,?,?)";
+
         try ( Connection conn = connectionProvider.getConnection();
               PreparedStatement stmt = conn.prepareStatement( insertSQL ) ) {
 
@@ -69,6 +70,7 @@ public class TrainingDaoImpl implements TrainingDao {
                 "DELETE FROM " +
                         "dictionary " +
                         "WHERE id = " + id;
+
         try ( Connection conn = connectionProvider.getConnection();
               Statement stmt = conn.createStatement() ) {
 
@@ -83,6 +85,7 @@ public class TrainingDaoImpl implements TrainingDao {
                 "UPDATE dictionary SET " +
                         "ger_word = ?, rus_word = ?, learned = ? " +
                         "WHERE id = " + id;
+
         try ( Connection conn = connectionProvider.getConnection();
               PreparedStatement stmt = conn.prepareStatement( updateSQL ) ) {
 
