@@ -14,7 +14,5 @@ public interface TrainingDao {
 
     void updateUnit( int id, TrainingUnit unit ) throws SQLException;
 
-    List<TrainingUnit> getLastUnlearnedUnits( int maxUnits ) throws SQLException;
-
-    List<TrainingUnit> getLastUnlearnedUnits() throws SQLException;
+    List<TrainingUnit> getUnlearnedUnits( int maxUnits ) throws SQLException;
 }

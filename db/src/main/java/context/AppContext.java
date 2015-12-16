@@ -14,7 +14,7 @@ public class AppContext {
     }
 
     private static void initContext() {
-        String[] appContexts = new String[]{ "spring-context.xml" };
+        String[] appContexts = new String[]{ "db-spring-context.xml" };
         instance = new ClassPathXmlApplicationContext( appContexts );
     }
 }

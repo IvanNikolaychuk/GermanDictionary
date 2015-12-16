@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrainingDaoImpl implements TrainingDao {
-    private static final int UNITS_NUMBER = 5;
     private DbConnectionProvider connectionProvider;
 
     public TrainingDaoImpl( DbConnectionProvider connectionProvider ) {
@@ -99,7 +98,7 @@ public class TrainingDaoImpl implements TrainingDao {
         }
     }
 
-    public List<TrainingUnit> getLastUnlearnedUnits( int maxUnits ) throws SQLException {
+    public List<TrainingUnit> getUnlearnedUnits( int maxUnits ) throws SQLException {
         List<TrainingUnit> trainingUnits = new ArrayList<>( maxUnits );
 
         @SuppressWarnings( "all" )
@@ -118,10 +117,6 @@ public class TrainingDaoImpl implements TrainingDao {
         }
 
         return trainingUnits;
-    }
-
-    public List<TrainingUnit> getLastUnlearnedUnits() throws SQLException {
-        return getLastUnlearnedUnits( UNITS_NUMBER );
     }
 
 }
