@@ -1,0 +1,39 @@
+body{
+    background-image: url("../img/home-bg.jpg") ;
+    background-size: cover;
+}
+
+#main-menu{
+    width: 300px;
+    height: 150px;
+    border-radius: 5%;
+    background: #000;
+    border:1px solid #000;
+    padding-top: 30px;
+    margin-top: 280px;
+    margin-left: 450px;
+    text-align: center;
+    opacity: 0.85;
+}
+
+#main-menu:hover{
+    opacity: 1;
+}
+
+#main-menu .option a{
+    display: block;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bolder;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+#main-menu .option a:hover{
+    color:#F57C73;
+}
+
+#main-menu a{
+    color: #fff;
+    text-decoration: none;
+}
