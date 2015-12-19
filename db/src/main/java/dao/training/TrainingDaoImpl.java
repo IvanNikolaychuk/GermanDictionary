@@ -119,4 +119,24 @@ public class TrainingDaoImpl implements TrainingDao {
         return trainingUnits;
     }
 
+    @Override
+    public List<TrainingUnit> getAllUnits() throws SQLException {
+        List<TrainingUnit> trainingUnits = new ArrayList<>( );
+
+        @SuppressWarnings( "all" )
+        final String selectSQL = "SELECT * " +
+                "FROM dictionary";
+
+        try ( Connection conn = connectionProvider.getConnection();
+              Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery( selectSQL ) ) {
+
+            while ( rs.next() ) {
+                trainingUnits.add( TrainingDaoUtils.generateUnitFromResultSet( rs ) );
+            }
+        }
+
+        return trainingUnits;
+    }
+
 }

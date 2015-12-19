@@ -14,6 +14,7 @@ public class DbConnectionProvider {
     }
 
     public Connection getConnection() throws SQLException {
+        DriverManager.registerDriver( new org.postgresql.Driver() );
         return DriverManager.getConnection( dbCredentials.getConnectString(),
                 dbCredentials.getUser(), dbCredentials.getPassword() );
     }

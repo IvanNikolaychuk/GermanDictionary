@@ -2,6 +2,7 @@ package service;
 
 import dao.training.TrainingDao;
 import dictionary.training.TrainingUnit;
+import exception.ServiceNotAvailableException;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,11 +15,23 @@ public class TrainingServiceImpl implements TrainingService {
         this.trainingDao = trainingDao;
     }
 
-    public List<TrainingUnit> getLastUnlearnedUnits() throws SQLException {
+    public List<TrainingUnit> getLastUnlearnedUnits() throws ServiceNotAvailableException {
         return getLastUnlearnedUnits( UNITS_NUMBER );
     }
     // todo: should throw other exceptions
-    public List<TrainingUnit> getLastUnlearnedUnits( int maxUnits ) throws SQLException {
-        return trainingDao.getUnlearnedUnits( maxUnits );
+    public List<TrainingUnit> getLastUnlearnedUnits( int maxUnits ) throws ServiceNotAvailableException {
+        try {
+            return trainingDao.getUnlearnedUnits( maxUnits );
+        } catch ( SQLException e ) {
+            throw new ServiceNotAvailableException( e );
+        }
+    }
+
+    public List<TrainingUnit> getAllTrainingUnits() throws ServiceNotAvailableException {
+        try {
+            return trainingDao.getAllUnits();
+        } catch ( SQLException e ) {
+            throw new ServiceNotAvailableException( e );
+        }
     }
 }

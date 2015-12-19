@@ -3,7 +3,7 @@ package context;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AppContext {
+public class DbModuleContext {
     private static ApplicationContext instance;
 
     public static ApplicationContext getAppContext() {
