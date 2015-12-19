@@ -4,12 +4,11 @@ body{
 }
 
 #main-menu{
-    width: 300px;
-    height: 150px;
+    width: 330px;
+    height: 180px;
     border-radius: 5%;
     background: #000;
-    border:1px solid #000;
-    padding-top: 30px;
+    padding-top: 20px;
     margin-top: 280px;
     margin-left: 450px;
     text-align: center;
@@ -26,7 +25,8 @@ body{
     font-size: 1.2em;
     font-weight: bolder;
     cursor: pointer;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-family: 'Pacifico', cursive;
 }
 
 #main-menu .option a:hover{
@@ -35,5 +35,4 @@ body{
 
 #main-menu a{
     color: #fff;
-    text-decoration: none;
 }
