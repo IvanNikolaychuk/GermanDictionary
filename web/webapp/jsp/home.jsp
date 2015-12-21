@@ -13,7 +13,7 @@
         <a href="words">Список слов</a>
     </div>
     <div class="option">
-        <a href="words.jsp">Добавить слова</a>
+        <a href="add-words">Добавить слова</a>
     </div>
     <div class="option">
         <a href="training.jsp">Тренировка</a>

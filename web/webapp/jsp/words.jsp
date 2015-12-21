@@ -3,9 +3,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="../static/css/words.css" rel="stylesheet"/>
     <link href="../static/css/basic.css" rel="stylesheet"/>
-    <title>Current Words</title>
+    <link href="../static/css/words.css" rel="stylesheet"/>
+    <title>All Words</title>
 </head>
 <body>
 <div id="words">
