@@ -6,8 +6,11 @@
 
     <import resource="db-spring-context.xml"/>
 
-    <bean id="trainingService" class="service.TrainingServiceImpl">
+    <bean id="trainingService" class="service.training.TrainingServiceImpl">
         <constructor-arg ref="trainingDao"/>
     </bean>
 
+    <bean id="gerWordsValidator" class="validator.strategy.GermanWordsValidatorStrategy"/>
+    <bean id="rusWordsValidator" class="validator.strategy.RussianWordsValidatorStrategy"/>
+    <bean id="defaultWordsValidator" class="validator.strategy.DefaultWordsValidatorStrategy"/>
 </beans>
