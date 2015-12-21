@@ -1,4 +1,4 @@
-package service;
+package service.training;
 
 import dao.training.TrainingDao;
 import dictionary.training.TrainingUnit;

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class EngineModuleContext {
     private static ApplicationContext instance;
 
-    public static ApplicationContext getAppContext() {
+    public static ApplicationContext getContext() {
         if ( instance == null ) {
             initContext();
         }

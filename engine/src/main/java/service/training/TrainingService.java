@@ -1,4 +1,4 @@
-package service;
+package service.training;
 
 import dictionary.training.TrainingUnit;
 import exception.ServiceNotAvailableException;
