@@ -6,26 +6,28 @@
     <link href="../static/css/basic.css" rel="stylesheet"/>
     <link href="../static/css/add-words.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../static/js/add-words.js"></script>
 </head>
 <body>
 <div id="add-words-panel">
     <label>
         <div class="title">German</div>
-        <input type="text" name="ger-word">
+        <input type="text" class="ger-word" name="ger-word">
     </label>
 
     <label>
         <div class="title">Russian</div>
-        <input type="text" name="ger-word">
+        <input type="text" class="rus-word" name="rus-word">
     </label>
 
     <br>
 
-    <input type="submit" value="Add">
+    <input id="add-words-btn" type="submit" value="Add">
 
     <br/>
     <button class="btn home-btn">
-        <a href="home">Home</a>
+        <a href="${pageContext.request.contextPath}/home">Home</a>
     </button>
 </div>
 </body>

@@ -22,6 +22,15 @@
         <url-pattern>/words</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>addWords</servlet-name>
+        <servlet-class>com.controller.AddWordsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addWords</servlet-name>
+        <url-pattern>/add-words</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>/jsp/home.jsp</welcome-file>
     </welcome-file-list>
