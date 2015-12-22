@@ -34,4 +34,12 @@ public class TrainingServiceImpl implements TrainingService {
             throw new ServiceNotAvailableException( e );
         }
     }
+
+    public void insertUnit( TrainingUnit unit ) throws ServiceNotAvailableException {
+        try {
+            trainingDao.insertUnit( unit );
+        } catch ( SQLException e ) {
+            throw new ServiceNotAvailableException( e );
+        }
+    }
 }

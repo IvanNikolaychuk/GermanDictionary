@@ -2,16 +2,17 @@ package com.controller;
 
 import com.controller.base.BaseController;
 import context.DbModuleContext;
-import dao.training.TrainingDao;
 import dictionary.training.TrainingUnit;
 import dictionary.word.WordPair;
+import exception.ServiceNotAvailableException;
 import exceptions.word.WordIsNotValidException;
+import service.training.TrainingService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Map;
 
 import static dictionary.word.WordType.*;
@@ -41,15 +42,15 @@ public class AddWordsController extends BaseController {
             resp.sendError( HttpServletResponse.SC_BAD_REQUEST );
             return;
         }
-        TrainingDao trainingDao = ( TrainingDao ) DbModuleContext.getAppContext().getBean( "trainingDao" );
+        TrainingService trainingService = ( TrainingService ) DbModuleContext.getAppContext().getBean( "trainingService" );
 
         WordPair wordPair = new WordPair( validatedRusWord, validatedGerWord );
         TrainingUnit unit = new TrainingUnit( wordPair );
 
         try {
-            trainingDao.insertUnit( unit );
-        } catch ( SQLException e ) {
-            resp.sendError( HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
+            trainingService.insertUnit( unit );
+        }  catch ( ServiceNotAvailableException e ) {
+           resp.sendError( HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
         }
 
     }
