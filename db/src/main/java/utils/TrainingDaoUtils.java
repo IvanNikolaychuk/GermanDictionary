@@ -21,7 +21,7 @@ public final class TrainingDaoUtils {
         boolean isLearned = rs.getBoolean( "learned" );
         int id = rs.getInt( "id" );
 
-        WordPair wordPair = new WordPair( new Word( gerWord ), new Word( rusWord ) );
+        WordPair wordPair = new WordPair( rusWord, gerWord );
         unit = new TrainingUnit( wordPair );
         unit.setLearned( isLearned );
         unit.setId( id );
