@@ -1,21 +1,12 @@
 package validator.strategy;
 
-import exceptions.word.WordContainsDigitsException;
 import exceptions.word.WordIsNotValidException;
 
 import static validator.utils.WordValidatorUtils.*;
 
-public class GermanWordsValidatorStrategy implements WordsValidatorStrategy {
+public class GermanWordValidatorStrategy implements WordValidatorStrategy {
 
     public String validateAndGet( final String word ) throws WordIsNotValidException {
-        if ( word == null ) {
-            throw new WordIsNotValidException( "Word shouldn't be null" );
-        }
-
-        if ( containsDigits( word ) ) {
-            throw new WordContainsDigitsException( word + " contains digit" );
-        }
-
         if ( isSingle( word ) ) {
             return word.toLowerCase();
         } else {
