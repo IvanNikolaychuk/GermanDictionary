@@ -11,12 +11,11 @@ $(function () {
         $.ajax({
             url: 'add-words',
             type: 'POST',
-            data: data,
-            success: function () {
-                $rusWord.val("");
-                $gerWord.val("");
-                $gerWord.focus();
-            }
-        }).send();
+            data: data
+        }).always(function() {
+            $rusWord.val("");
+            $gerWord.val("");
+            $gerWord.focus();
+        });
     });
 });
