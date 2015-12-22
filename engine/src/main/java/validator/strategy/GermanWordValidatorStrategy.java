@@ -19,7 +19,7 @@ public class GermanWordValidatorStrategy implements WordValidatorStrategy {
         final String[] articles = { "der", "die", "das" };
 
         for ( String article : articles ) {
-            if ( word.substring( 0, 4 ).equalsIgnoreCase( article ) ) {
+            if ( word.substring( 0, 3 ).equalsIgnoreCase( article ) ) {
                 return true;
             }
         }

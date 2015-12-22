@@ -60,7 +60,7 @@ public class WordValidatorUtils {
         if (splitWord.length < 2) {
             return capitalizeFirstWordOthersToLower( word );
         } else {
-            String article = splitWord[0].toUpperCase();
+            String article = splitWord[0];
             String wordWithoutArticle = word.substring( article.length() ).trim();
 
             return article.toLowerCase() + SPACE + capitalizeFirstWordOthersToLower( wordWithoutArticle );
