@@ -10,7 +10,7 @@
         <constructor-arg ref="trainingDao"/>
     </bean>
 
-    <bean id="gerWordsValidator" class="validator.strategy.GermanWordsValidatorStrategy"/>
-    <bean id="rusWordsValidator" class="validator.strategy.RussianWordsValidatorStrategy"/>
-    <bean id="defaultWordsValidator" class="validator.strategy.DefaultWordsValidatorStrategy"/>
+    <bean id="gerWordsValidator" class="validator.strategy.GermanWordValidatorStrategy"/>
+    <bean id="rusWordsValidator" class="validator.strategy.RussianWordValidatorStrategy"/>
+    <bean id="defaultWordsValidator" class="validator.strategy.DefaultWordValidatorStrategy"/>
 </beans>
