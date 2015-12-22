@@ -9,6 +9,10 @@ public class WordPair {
         this.germanWord = germanWord;
     }
 
+    public WordPair( String russianWord, String germanWord ) {
+        this( new Word( russianWord ), new Word( germanWord ) );
+    }
+
     public Word getGermanWord() {
         return germanWord;
     }
