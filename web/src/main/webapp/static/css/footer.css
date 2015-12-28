@@ -3,3 +3,17 @@ footer{
     height: 6em;
     opacity: 0.95;
 }
+
+.email{
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+
+.contact-info{
+    letter-spacing: 0.02em;
+    padding-top: 2%;
+    padding-left: 2%;
+    font-size: 1.2em;
+    color:#fff;
+}

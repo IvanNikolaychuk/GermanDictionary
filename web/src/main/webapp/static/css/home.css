@@ -55,17 +55,3 @@ main{
     background-image: url("../img/settings.png");
 }
 
-.contact-info{
-    letter-spacing: 0.02em;
-    padding-top: 2%;
-    padding-left: 2%;
-    font-size: 1.2em;
-    color:#fff;
-}
-
-.email{
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-
-

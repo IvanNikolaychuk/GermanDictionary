@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <link href="../static/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="../static/css/bootstrap.css" rel="stylesheet"/>
-    <script href="../static/js/bootstrap.js"></script>
     <link href="../static/css/home.css" rel="stylesheet"/>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/home.js"></script>
     <title>Home</title>
 </head>
 <body>
