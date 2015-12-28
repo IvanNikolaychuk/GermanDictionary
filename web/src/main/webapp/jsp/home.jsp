@@ -2,22 +2,28 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="../static/css/basic.css" rel="stylesheet"/>
+    <link href="../static/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="../static/css/bootstrap.css" rel="stylesheet"/>
+    <script href="../static/js/bootstrap.js"></script>
     <link href="../static/css/home.css" rel="stylesheet"/>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <title>Home</title>
 </head>
 <body>
-<div id="main-menu">
-    <div class="option">
-        <a href="words">Список слов</a>
+<jsp:include page="header.jsp"/>
+<main>
+    <div id="container">
+        <div class="item">
+            <div class="icon dictionary-icon"></div>
+        </div>
+        <div class="item">
+            <div class="icon learn-icon"></div>
+        </div>
+        <div class="item">
+            <div class="icon settings-icon"></div>
+        </div>
     </div>
-    <div class="option">
-        <a href="add-words">Добавить слова</a>
-    </div>
-    <div class="option">
-        <a href="training.jsp">Тренировка</a>
-    </div>
-</div>
+</main>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
