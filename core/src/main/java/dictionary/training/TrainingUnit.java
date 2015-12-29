@@ -28,11 +28,7 @@ public class TrainingUnit {
         return wordPair;
     }
 
-    public void setWordPair( WordPair wordPair ) {
-        this.wordPair = wordPair;
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 

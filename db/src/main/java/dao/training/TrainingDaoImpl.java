@@ -16,33 +16,7 @@ public class TrainingDaoImpl implements TrainingDao {
         this.connectionProvider = connectionProvider;
     }
 
-    public TrainingUnit getUnit( int id ) throws SQLException {
-
-        @SuppressWarnings( "all" )
-        final String selectSQL =
-                "SELECT * " +
-                        "FROM dictionary " +
-                        "WHERE id = " + id;
-
-        try ( Connection conn = connectionProvider.getConnection();
-              Statement stmt = conn.createStatement();
-              ResultSet rs = stmt.executeQuery( selectSQL ) ) {
-
-            // assume there is one unit with such id.
-            // move rs to point on first one.
-            rs.next();
-            TrainingUnit unit = TrainingDaoUtils.generateUnitFromResultSet( rs );
-
-            if ( unit == null ) {
-                // todo: make normal exceptions
-                throw new SQLException( "No unit with id " + id );
-            }
-
-            return unit;
-        }
-    }
-
-    public void insertUnit( TrainingUnit unit ) throws SQLException {
+      public void insertUnit( TrainingUnit unit ) throws SQLException {
         @SuppressWarnings( "all" )
         final String insertSQL =
                 "INSERT INTO " +
@@ -74,6 +48,21 @@ public class TrainingDaoImpl implements TrainingDao {
               Statement stmt = conn.createStatement() ) {
 
             stmt.execute( deleteSQL );
+        }
+    }
+
+    public boolean deleteUnit( String gerWord ) throws SQLException {
+
+        @SuppressWarnings( "all" )
+        final String deleteSQL =
+                "DELETE FROM " +
+                        "dictionary " +
+                        "WHERE ger_word = '" + gerWord + "'";
+
+        try ( Connection conn = connectionProvider.getConnection();
+              Statement stmt = conn.createStatement() ) {
+
+            return stmt.execute( deleteSQL );
         }
     }
 
@@ -119,7 +108,6 @@ public class TrainingDaoImpl implements TrainingDao {
         return trainingUnits;
     }
 
-    @Override
     public List<TrainingUnit> getAllUnits() throws SQLException {
         List<TrainingUnit> trainingUnits = new ArrayList<>( );
 
@@ -138,5 +126,32 @@ public class TrainingDaoImpl implements TrainingDao {
 
         return trainingUnits;
     }
+
+    public TrainingUnit getUnit( int id ) throws SQLException {
+
+        @SuppressWarnings( "all" )
+        final String selectSQL =
+                "SELECT * " +
+                        "FROM dictionary " +
+                        "WHERE id = " + id;
+
+        try ( Connection conn = connectionProvider.getConnection();
+              Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery( selectSQL ) ) {
+
+            // assume there is one unit with such id.
+            // move rs to point on first one.
+            rs.next();
+            TrainingUnit unit = TrainingDaoUtils.generateUnitFromResultSet( rs );
+
+            if ( unit == null ) {
+                // todo: make normal exceptions
+                throw new SQLException( "No unit with id " + id );
+            }
+
+            return unit;
+        }
+    }
+
 
 }

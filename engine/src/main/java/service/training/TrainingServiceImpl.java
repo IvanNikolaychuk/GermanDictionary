@@ -42,4 +42,12 @@ public class TrainingServiceImpl implements TrainingService {
             throw new ServiceNotAvailableException( e );
         }
     }
+
+    public void deleteUnt( String gerWord ) throws ServiceNotAvailableException {
+        try {
+            trainingDao.deleteUnit( gerWord );
+        } catch ( SQLException e ) {
+            throw new ServiceNotAvailableException( e );
+        }
+    }
 }

@@ -14,4 +14,6 @@ public interface TrainingService {
     List<TrainingUnit> getAllTrainingUnits() throws ServiceNotAvailableException;
 
     void insertUnit( TrainingUnit unit ) throws ServiceNotAvailableException;
+
+    void deleteUnt( String gerWord ) throws ServiceNotAvailableException;
 }

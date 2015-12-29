@@ -8,6 +8,8 @@ import java.util.List;
 public interface TrainingDao {
     TrainingUnit getUnit( int id ) throws SQLException;
 
+    boolean deleteUnit( String gerWord ) throws SQLException;
+
     void insertUnit( TrainingUnit unit ) throws SQLException;
 
     void deleteUnit( int id ) throws SQLException;
