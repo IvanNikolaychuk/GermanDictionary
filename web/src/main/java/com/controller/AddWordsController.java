@@ -2,6 +2,7 @@ package com.controller;
 
 import com.controller.base.BaseController;
 import context.DbModuleContext;
+import context.EngineModuleContext;
 import dictionary.training.TrainingUnit;
 import dictionary.word.WordPair;
 import exception.ServiceNotAvailableException;
@@ -42,7 +43,8 @@ public class AddWordsController extends BaseController {
             resp.sendError( HttpServletResponse.SC_BAD_REQUEST );
             return;
         }
-        TrainingService trainingService = ( TrainingService ) DbModuleContext.getAppContext().getBean( "trainingService" );
+        TrainingService trainingService =
+                ( TrainingService ) EngineModuleContext.getContext().getBean( "trainingService" );
 
         WordPair wordPair = new WordPair( validatedRusWord, validatedGerWord );
         TrainingUnit unit = new TrainingUnit( wordPair );
