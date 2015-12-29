@@ -1,10 +1,22 @@
 package dictionary.word;
 
 public class WordPair {
-    private Word germanWord;
-    private Word russianWord;
+    private final Word germanWord;
+    private final Word russianWord;
 
     public WordPair( Word russianWord, Word germanWord ) {
+        if (russianWord == null || germanWord == null) {
+            throw new IllegalArgumentException( "Words cannot be null" );
+        }
+
+        if (russianWord.getValue().length() < 3) {
+            throw new IllegalArgumentException(russianWord.getValue() + " is too short.");
+        }
+
+        if (germanWord.getValue().length() < 3) {
+            throw new IllegalArgumentException(germanWord.getValue() + " is too short.");
+        }
+
         this.russianWord = russianWord;
         this.germanWord = germanWord;
     }
@@ -14,19 +26,15 @@ public class WordPair {
     }
 
     public Word getGermanWord() {
-        return germanWord;
-    }
-
-    public void setGermanWord( Word germanWord ) {
-        this.germanWord = germanWord;
+        return new Word( germanWord.getValue() );
     }
 
     public Word getRussianWord() {
-        return russianWord;
+        return new Word( russianWord.getValue() );
     }
 
-    public void setRussianWord( Word russianWord ) {
-        this.russianWord = russianWord;
+    public WordPair copy() {
+        return new WordPair( germanWord.getValue(), russianWord.getValue() );
     }
 
     @Override
