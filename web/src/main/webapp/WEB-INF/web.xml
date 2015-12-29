@@ -31,6 +31,15 @@
         <url-pattern>/add-words</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>deleteWords</servlet-name>
+        <servlet-class>com.controller.DeleteWordsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteWords</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>/jsp/home.jsp</welcome-file>
     </welcome-file-list>

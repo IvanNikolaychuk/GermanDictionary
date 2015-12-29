@@ -97,7 +97,7 @@ input[type="text"]{
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .ger-field::-webkit-input-placeholder,
@@ -118,7 +118,7 @@ input[type="text"]{
     cursor: pointer;
     position: absolute;
     right: 29%;
-    bottom: 40%;
+    bottom: 55%;
 }
 
 .wrapper{
