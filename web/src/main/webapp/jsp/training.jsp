@@ -7,9 +7,11 @@
 
     <link href="../static/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="../static/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../static/css/helper-chars.css" rel="stylesheet"/>
     <link href="../static/css/training.css" rel="stylesheet"/>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../static/js/helper-chars.js"></script>
     <script src="../static/js/bootstrap.js"></script>
     <script src="../static/js/training.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
@@ -18,11 +20,18 @@
 <jsp:include page="header.jsp"/>
 
 <main>
+
     <div id="container">
-        <input class="rus-word" type="text" disabled>
+        <div class="helper-chars">
+            <div class="char">ü</div>
+            <div class="char">ö</div>
+            <div class="char">ä</div>
+            <div class="char">ß</div>
+        </div>
+        <input class="rus-field" type="text" disabled>
         <br>
         <br>
-        <input class="ger-word" type="text">
+        <input class="ger-field" type="text">
         <br>
         <br>
         <input type="button" class="btn answer-btn" value="Answer">
@@ -30,7 +39,5 @@
     </div>
     <input type="button" class="btn home-btn" value="Home">
 </main>
-
-<%--<jsp:include page="footer.jsp"/>--%>
 </body>
 </html>

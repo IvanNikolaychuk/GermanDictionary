@@ -4,8 +4,20 @@ $(function () {
         window.location = "/home";
     });
 
-    var toDelete = 0;
+    var $rusField = $(".rus-field");
+    var $gerField = $(".ger-field");
+    $gerField.focus();
 
+    $rusField.keypress(function(e){
+       if (e.which == 13) {
+           // enter is pressed
+           $("#add-words-btn").click();
+           return false;
+       }
+    });
+
+
+    var toDelete = 0;
     // UI for deleting
     $(".pair").click(function (ev) {
         var $target = $(ev.target);
@@ -45,10 +57,6 @@ $(function () {
             $deleteBtn.css("background", "#EB8F8F");
         }
     }
-
-    var $rusField = $(".rus-field");
-    var $gerField = $(".ger-field");
-    $gerField.focus();
 
     $("#add-words-btn").click(function () {
         var $rusWord = $rusField.val();

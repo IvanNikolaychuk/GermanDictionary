@@ -1,12 +1,13 @@
 .helper-chars{
-    width:6%;
     padding:2px;
+    color: #9A9595;
     border-radius: 5px;
     margin-left: 10%;
     font-size: 1.3em;
-    border: 1px solid #8F9090;
+    border: 1px solid #D5D8D8;
     position: absolute;
-    left: 15%;
+    left: 11%;
+    top: 7%;
 }
 
 .char{
@@ -19,5 +20,5 @@
 }
 
 .char:hover{
-    color: #609FE2;
+    color: #64AFFF;
 }

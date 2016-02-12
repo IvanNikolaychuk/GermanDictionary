@@ -1,7 +1,16 @@
 $(function () {
     var units;
     var poz;
-    $(".ger-word").focus();
+    var $gerField =  $(".ger-field");
+    $gerField.focus();
+
+    $gerField.keypress(function (e) {
+        if (e.which == 13) {
+            // enter
+            $('.answer-btn').click();
+            return false;
+        }
+    });
 
     $(".home-btn").click(function () {
         window.location = "/home";
@@ -9,7 +18,8 @@ $(function () {
 
     $(".help-btn").click(function () {
         if (!trainingIsOver()) {
-            $(".ger-word").val(units[poz].wordPair.germanWord.value);
+            $(".ger-field").val(units[poz].wordPair.germanWord.value);
+            $(".ger-field").focus();
         }
         units[poz].correctAnswers = 0;
     });
@@ -40,13 +50,13 @@ $(function () {
             });
         } else {
             var pair = units[poz].wordPair;
-            $(".rus-word").val(pair.russianWord.value);
+            $(".rus-field").val(pair.russianWord.value);
         }
     };
 
 
     $(".answer-btn").click(function () {
-        var $gerWord = $('.ger-word');
+        var $gerWord = $('.ger-field');
         check($gerWord.val());
         $gerWord.val("");
         $gerWord.focus();
@@ -69,6 +79,5 @@ $(function () {
             return true;
         }
     };
-
 
 });
