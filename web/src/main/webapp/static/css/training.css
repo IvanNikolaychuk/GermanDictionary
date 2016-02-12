@@ -15,37 +15,51 @@ input[type="text"]{
     text-align: center;
 }
 
+input[type="text"]{
+    height: 30px;
+    text-align: center;
+    border-radius:4px;
+    border:1px solid #E2DCDC;
+    background:#fff;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border: 1px solid rgba(85, 140, 193, 0.54);
+}
+
+
 .btn{
     margin-top: 1.5%;
     margin-right: 0.4%;
     margin-left: 0.4%;
     color:#fff;
-    font-size: 1.1em !important;
-    font-weight: bold!important;
-    letter-spacing: 1px;
     outline: none;
-    width: 8%;
+    width: 7%;
     height: 40px;
+    font-size: 1.17em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.6px;
     font-family: 'Merriweather', serif;
+
 }
 
 .home-btn{
     margin-top: 3%;
     width:14%;
-    background: #CCCCCC;
-
+    background: rgba(128, 192, 234, 0.83);
 }
 
 .home-btn:hover{
-    background: #89AB92;
+    background: rgb(93, 191, 255);
 }
 
 .help-btn{
-    background: #DACC8A;
+    background: rgba(216, 205, 72, 0.67);
 }
 
 .help-btn:hover{
-    background: #D3BB4C;
+    background: rgb(216, 205, 72);
 }
 
 .answer-btn{

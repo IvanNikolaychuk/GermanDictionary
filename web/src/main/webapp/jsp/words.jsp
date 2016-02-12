@@ -6,11 +6,11 @@
     <link href="../static/css/bootstrap-theme.css" rel="stylesheet"/>
     <link href="../static/css/bootstrap.css" rel="stylesheet"/>
     <link href="../static/css/words.css" rel="stylesheet"/>
-    <link href="../static/css/helper-chars.css" rel="stylesheet"/>
+    <link href="../static/css/german-chars-keyboard.css" rel="stylesheet"/>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="../static/js/bootstrap.js"></script>
-    <script src="../static/js/helper-chars.js"></script>
+    <script src="../static/js/german-chars-keyboard.js"></script>
     <script src="../static/js/words.js"></script>
     <title>Words</title>
 </head>
