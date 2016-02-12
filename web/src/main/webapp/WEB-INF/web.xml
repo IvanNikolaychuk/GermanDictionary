@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>displayWords</servlet-name>
-        <servlet-class>com.controller.DisplayWordsController</servlet-class>
+        <servlet-class>com.controller.DisplayUnitsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>displayWords</servlet-name>
@@ -24,7 +24,7 @@
 
     <servlet>
         <servlet-name>addWords</servlet-name>
-        <servlet-class>com.controller.AddWordsController</servlet-class>
+        <servlet-class>com.controller.AddUnitsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addWords</servlet-name>
@@ -33,12 +33,40 @@
 
     <servlet>
         <servlet-name>deleteWords</servlet-name>
-        <servlet-class>com.controller.DeleteWordsController</servlet-class>
+        <servlet-class>com.controller.DeleteUnitsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteWords</servlet-name>
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>trainingController</servlet-name>
+        <servlet-class>com.controller.TrainingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>trainingController</servlet-name>
+        <url-pattern>/training</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateUnitsController</servlet-name>
+        <servlet-class>com.controller.UpdateUnitsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateUnitsController</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>settingsController</servlet-name>
+        <servlet-class>com.controller.SettingsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>settingsController</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+
 
     <welcome-file-list>
         <welcome-file>/jsp/home.jsp</welcome-file>

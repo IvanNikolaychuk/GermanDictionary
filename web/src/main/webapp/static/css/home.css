@@ -15,7 +15,7 @@ h1{
 main{
     margin: auto;
     padding-top: 150px;
-    height: 700px;
+    height: 100%;
     text-align: center;
     background: #f4f4f4;
 }
@@ -46,7 +46,7 @@ main{
     background-image: url("../img/dictionary.png");
 }
 
-.learn-icon{
+.training-icon{
     background-image: url("../img/study.png");
 }
 

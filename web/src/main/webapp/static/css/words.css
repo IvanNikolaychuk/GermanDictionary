@@ -1,24 +1,7 @@
-header{
-    background-color: #58B084;
-    height: 7em;
-}
-
-h1{
-    padding-top:1.5%;
-    padding-left: 1%;
-    margin-top: 0;
-}
-
-.title{
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
 main{
     margin: auto;
     padding-top: 150px;
-    height: 800px;
+    height: 100%;
     text-align: center;
     background: #f4f4f4;
 }

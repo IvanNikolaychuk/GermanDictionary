@@ -16,11 +16,11 @@ public class TrainingDaoImpl implements TrainingDao {
         this.connectionProvider = connectionProvider;
     }
 
-      public void insertUnit( TrainingUnit unit ) throws SQLException {
+    public void insertUnit( TrainingUnit unit ) throws SQLException {
         @SuppressWarnings( "all" )
         final String insertSQL =
                 "INSERT INTO " +
-                        "dictionary(ger_word, rus_word, learned) " +
+                        "dictionary(ger_word, rus_word, correct_answers) " +
                         "VALUES (?,?,?)";
 
         try ( Connection conn = connectionProvider.getConnection();
@@ -30,7 +30,7 @@ public class TrainingDaoImpl implements TrainingDao {
 
             stmt.setString( 1, wordPair.getGermanWord().getValue() );
             stmt.setString( 2, wordPair.getRussianWord().getValue() );
-            stmt.setBoolean( 3, unit.isLearned() );
+            stmt.setInt( 3, unit.getCorrectAnswers() );
 
             stmt.execute();
         }
@@ -71,7 +71,7 @@ public class TrainingDaoImpl implements TrainingDao {
         @SuppressWarnings( "all" )
         final String updateSQL =
                 "UPDATE dictionary SET " +
-                        "ger_word = ?, rus_word = ?, learned = ? " +
+                        "ger_word = ?, rus_word = ?, correct_answers = ? " +
                         "WHERE id = " + id;
 
         try ( Connection conn = connectionProvider.getConnection();
@@ -81,19 +81,18 @@ public class TrainingDaoImpl implements TrainingDao {
 
             stmt.setString( 1, wordPair.getGermanWord().getValue() );
             stmt.setString( 2, wordPair.getRussianWord().getValue() );
-            stmt.setBoolean( 3, unit.isLearned() );
+            stmt.setInt( 3, unit.getCorrectAnswers() );
 
             stmt.executeUpdate();
         }
     }
 
-    public List<TrainingUnit> getUnlearnedUnits( int maxUnits ) throws SQLException {
+    public List<TrainingUnit> getUnits( int maxUnits ) throws SQLException {
         List<TrainingUnit> trainingUnits = new ArrayList<>( maxUnits );
 
         @SuppressWarnings( "all" )
         final String selectSQL = "SELECT * " +
                 "FROM dictionary " +
-                "WHERE learned = 'false' " +
                 "LIMIT " + maxUnits;
 
         try ( Connection conn = connectionProvider.getConnection();
@@ -109,7 +108,7 @@ public class TrainingDaoImpl implements TrainingDao {
     }
 
     public List<TrainingUnit> getAllUnits() throws SQLException {
-        List<TrainingUnit> trainingUnits = new ArrayList<>( );
+        List<TrainingUnit> trainingUnits = new ArrayList<>();
 
         @SuppressWarnings( "all" )
         final String selectSQL = "SELECT * " +

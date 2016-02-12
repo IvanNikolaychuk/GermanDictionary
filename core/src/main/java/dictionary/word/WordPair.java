@@ -33,10 +33,6 @@ public class WordPair {
         return new Word( russianWord.getValue() );
     }
 
-    public WordPair copy() {
-        return new WordPair( germanWord.getValue(), russianWord.getValue() );
-    }
-
     @Override
     public String toString() {
         return "WordPair{" +

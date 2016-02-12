@@ -51,14 +51,29 @@ $(function () {
     $gerField.focus();
 
     $("#add-words-btn").click(function () {
+        var $rusWord = $rusField.val();
+        var $gerWord = $gerField.val();
+
         var data = {
-            "russian": $rusField.val(),
-            "german": $gerField.val()
+            "russian": $rusWord,
+            "german": $gerWord
         };
+
         $.ajax({
             url: 'add-words',
             type: 'POST',
             data: data
+        }).done(function () {
+            var $baseDiv = $("<div></div>");
+            var $gerWordSpan = $("<span>" + $gerWord + "</span>");
+            var $rusWordSpan = $("<span>" + $rusWord + "</span>");
+            var $dashSpan = $("<span>" + " - " + "</span>");
+            $gerWordSpan.addClass("word ger-word");
+            $rusWordSpan.addClass("word rus-word");
+            $dashSpan.addClass("dash");
+
+            $baseDiv.append($gerWordSpan).append($dashSpan).append($rusWordSpan);
+            $baseDiv.addClass('pair').prependTo($("#container"));
         }).always(function () {
             $rusField.val("");
             $gerField.val("");
@@ -72,11 +87,12 @@ $(function () {
             if ($(this).hasClass("ger-word")) {
                 var gerWord = $(this)[0].innerText;
                 wordsToDelete.push(gerWord);
+                $(this).parent().hide();
             }
         });
-        //alert(wordsToDelete);
-        var data ={
-            "words" : JSON.stringify(wordsToDelete)
+
+        var data = {
+            "words": JSON.stringify(wordsToDelete)
         };
 
         $.ajax({
@@ -84,6 +100,8 @@ $(function () {
             type: 'POST',
             data: data
         });
+
+        $(".delete-btn").css("background", "#EB8F8F");
     });
 
 

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-public class DeleteWordsController extends BaseController {
+public class DeleteUnitsController extends BaseController {
     @Override
     protected void doPost( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
         String words = req.getParameter( "words" );

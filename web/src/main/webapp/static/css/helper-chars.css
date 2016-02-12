@@ -1,0 +1,23 @@
+.helper-chars{
+    width:6%;
+    padding:2px;
+    border-radius: 5px;
+    margin-left: 10%;
+    font-size: 1.3em;
+    border: 1px solid #8F9090;
+    position: absolute;
+    left: 15%;
+}
+
+.char{
+    display: inline-block;
+    width:25px;
+    height:25px;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.char:hover{
+    color: #609FE2;
+}

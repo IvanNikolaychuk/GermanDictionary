@@ -5,7 +5,7 @@
 </head>
 <body>
 <header>
-    <h1 class="title">German Dictionary</h1>
+    <h1 class="title" onclick="window.location='/home'">German Dictionary</h1>
 </header>
 </body>
 </html>

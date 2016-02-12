@@ -18,14 +18,12 @@
             <div class="icon dictionary-icon"></div>
         </div>
         <div class="item">
-            <div class="icon learn-icon"></div>
+            <div class="icon training-icon"></div>
         </div>
         <div class="item">
             <div class="icon settings-icon"></div>
         </div>
     </div>
 </main>
-
-<jsp:include page="footer.jsp"/>
 </body>
 </html>

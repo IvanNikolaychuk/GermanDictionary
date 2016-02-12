@@ -19,7 +19,7 @@ import java.util.Map;
 import static dictionary.word.WordType.*;
 import static validator.WordsValidator.validateAndGet;
 
-public class AddWordsController extends BaseController {
+public class AddUnitsController extends BaseController {
 
     @Override
     protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

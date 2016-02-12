@@ -2,3 +2,15 @@ header{
     background-color: #58B084;
     height: 7em;
 }
+
+header h1{
+    padding-top:1.5%;
+    padding-left: 1%;
+    margin-top: 0;
+}
+
+header .title{
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,7 +1,7 @@
-package service;
+package service.user;
 
-import dao.UserDao;
-import exceptions.user.UserNotFoundException;
+import dao.user.UserDao;
+import exceptions.UserNotFoundException;
 import role.Role;
 import user.User;
 
@@ -12,11 +12,11 @@ public class UserServiceImpl implements UserService{
         this.userDao = userDao;
     }
 
-    public User getUserById( long userId ) throws UserNotFoundException {
+    public User getUserById( int userId ) throws UserNotFoundException {
         return userDao.getUserById( userId );
     }
 
-    public boolean deleteUserById( long userId ) throws UserNotFoundException {
+    public boolean deleteUserById( int userId ) throws UserNotFoundException {
         return userDao.deleteUserById( userId );
     }
 

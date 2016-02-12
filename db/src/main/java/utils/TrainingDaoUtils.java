@@ -18,13 +18,11 @@ public final class TrainingDaoUtils {
 
         String gerWord = rs.getString( "ger_word" );
         String rusWord = rs.getString( "rus_word" );
-        boolean isLearned = rs.getBoolean( "learned" );
         int id = rs.getInt( "id" );
+        int correctAnswers = rs.getInt( "correct_answers" );
 
         WordPair wordPair = new WordPair( rusWord, gerWord );
-        unit = new TrainingUnit( wordPair );
-        unit.setLearned( isLearned );
-        unit.setId( id );
+        unit = new TrainingUnit( id, wordPair, correctAnswers );
 
         return unit;
     }

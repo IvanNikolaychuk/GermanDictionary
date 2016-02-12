@@ -9,19 +9,21 @@ import dictionary.word.WordPair;
 public class TrainingUnit {
     private int id;
     private WordPair wordPair;
-    private boolean isLearned;
+    private int correctAnswers;
 
     public TrainingUnit( WordPair wordPair ) {
         this.wordPair = wordPair;
-        isLearned = false;
+        correctAnswers = 0;
     }
 
-    public boolean isLearned() {
-        return isLearned;
+    public TrainingUnit( int id, WordPair wordPair, int correctAnswers ) {
+        this.id = id;
+        this.wordPair = wordPair;
+        this.correctAnswers = correctAnswers;
     }
 
-    public void setLearned( boolean learned ) {
-        isLearned = learned;
+    public int getCorrectAnswers() {
+        return correctAnswers;
     }
 
     public WordPair getWordPair() {
@@ -32,7 +34,4 @@ public class TrainingUnit {
         return id;
     }
 
-    public void setId( int id ) {
-        this.id = id;
-    }
 }

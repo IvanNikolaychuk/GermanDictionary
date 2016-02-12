@@ -22,4 +22,8 @@
         <constructor-arg ref="dbConnProvider"/>
     </bean>
 
+    <bean id="settingsDao" class="dao.settings.SettingsDao">
+        <constructor-arg ref="dbConnProvider"/>
+    </bean>
+
 </beans>

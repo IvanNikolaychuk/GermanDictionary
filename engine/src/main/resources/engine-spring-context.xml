@@ -10,6 +10,10 @@
         <constructor-arg ref="trainingDao"/>
     </bean>
 
+    <bean id="settingsServer" class="service.settings.SettingsService">
+        <constructor-arg ref="settingsDao"/>
+    </bean>
+
     <bean id="gerWordsValidator" class="validator.strategy.GermanWordValidatorStrategy"/>
     <bean id="rusWordsValidator" class="validator.strategy.RussianWordValidatorStrategy"/>
     <bean id="defaultWordsValidator" class="validator.strategy.DefaultWordValidatorStrategy"/>
